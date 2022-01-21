@@ -60,6 +60,16 @@ impl UnOrderedArray {
         }
     }
 
+    pub fn insertion_sort(&mut self) {
+        for i in 1..self.list.len() {
+            let mut j = i;
+            while j > 0 && self.list[j - 1] > self.list[j] {
+                self.list.swap(j - 1, j);
+                j -= 1;
+            }
+        }
+    }
+
     pub fn list_items(&self) -> String {
         let mut x = String::new();
 
